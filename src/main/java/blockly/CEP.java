@@ -17,7 +17,7 @@ public static final int TIMEOUT = 300;
  * CEP
  *
  * @author Rafael Juan Cardoso Martins
- * @since 20/03/2023, 16:59:17
+ * @since 20/03/2023, 17:43:00
  *
  */
 public static Var ConsultaCEP() throws Exception {
@@ -41,6 +41,8 @@ public static Var ConsultaCEP() throws Exception {
     Var.valueOf("/json/").getObjectAsString()), Var.VAR_NULL, Var.VAR_NULL, Var.VAR_NULL,
     Var.valueOf(""),
     Var.valueOf("BODY")));
+    cronapi.unittest.Operations.fnAssertEquals(
+    Var.valueOf("NUMBER"), Var.VAR_NULL, Var.VAR_NULL, Var.VAR_NULL);
     cronapi.util.Operations.callClientFunction(Var.valueOf("cronapi.screen.changeValueOfField"),
     Var.valueOf("Viagem.active.destino"),
     cronapi.json.Operations.getJsonOrMapField(RetornoCEp,
